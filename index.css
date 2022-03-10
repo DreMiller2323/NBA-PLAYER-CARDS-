@@ -1,0 +1,74 @@
+.photo-grid {
+    display: grid;
+    justify-content: center;
+      gap: 1rem;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 240px;
+    border: 5px groove white;
+    background-image:url('/jason-leung-nM2WEy42Npg-unsplash.jpg') ;
+  }
+  .card{
+    position:relative;
+    transform-style:preserve-3d;
+    transition: transform 0.6s;
+    border: 2px groove white;
+    color:whitesmoke;
+    background-color: transparent;
+    justify-content: center;
+    width: 100%;
+    height:100%;
+    perspective: 1000px;
+    /* transform: rotateY(180deg); */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   transition: all 1s linear;
+   transform-style: preserve-3d;
+  }
+body{
+  background-color: black;
+}
+header{
+  display:grid;
+  background-color: black;
+  color:white;
+place-items: center;
+}
+.front{
+  /* color: black; */
+transform: rotateY(180deg);
+z-index: 2;
+backface-visibility: hidden;
+
+}
+
+.back{
+background: linear-gradient(purple,black);
+background-color: purple;
+  transform: rotateY(180deg);
+  color: white;
+  z-index: 1;
+  border: 5px groove red;
+}
+/* .card:hover .back{
+  transform: rotateY(180deg);
+
+} */
+
+.front, .back{
+  display: grid;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font-size:1em;
+}
+.photo-grid:hover .card{
+  transform: rotateY(180deg);
+}
+
+ul{
+  border: gold;
+
+}
